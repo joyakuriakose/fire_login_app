@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "232325577747",
+    "project_id": "fireloginapp-c23e1",
+    "storage_bucket": "fireloginapp-c23e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232325577747:android:3c3c475e4801516bdc53e6",
+        "android_client_info": {
+          "package_name": "com.example.fire_login_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3FyumKevlYUC6QOaSYK6MT6h0qFD9uR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
