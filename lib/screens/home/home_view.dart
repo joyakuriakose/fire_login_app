@@ -45,8 +45,13 @@ class HomeView extends GetView<HomeViewController> {
                           Get.to(() => ThirdPageView(categoryId: item.id));
                         },
                         child: Card(
+                          color: Colors.transparent,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
+                            side: BorderSide(
+                              color: Colors.white,
+                              width: 2.0,
+                            ),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -66,7 +71,7 @@ class HomeView extends GetView<HomeViewController> {
                                   item.name ?? '',
                                   style: MyTheme.regularTextStyle(
                                     fontSize: 16,
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.w600,
                                   ),
                                   textAlign: TextAlign.center,
