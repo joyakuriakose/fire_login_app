@@ -42,7 +42,7 @@ class HomeView extends GetView<HomeViewController> {
                       return GestureDetector(
                         onTap: () {
                           Get.to(() => ThirdPageView(categoryId: item.id),
-                              transition: Transition.fadeIn, duration: Duration(milliseconds: 500));
+                               transition: Transition.fadeIn, duration: Duration(milliseconds: 500));
                         },
                         child: Card(
                           color: Colors.transparent,

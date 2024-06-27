@@ -1,10 +1,14 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 import '../../services/firebase_auth_services.dart';
 import '../../utils/routes.dart';
-import '../home/home_view.dart'; // Import HomeView
 
 class LoginViewController extends GetxController {
   final FirebaseAuthService auth = FirebaseAuthService();
@@ -26,11 +30,10 @@ class LoginViewController extends GetxController {
 
     isSigningUp.value = false;
     if (user != null) {
-      Get.snackbar("User is successfully signed in", 'Success');
+      Get.snackbar("User is successfully created", 'Success');
       if (keepLoggedIn.value) {
-
       }
-      navigateToHome(Get.context!);
+      Get.toNamed(Routes.home);
     } else {
       Get.snackbar("Some error happened", 'Failed');
     }
@@ -49,28 +52,4 @@ class LoginViewController extends GetxController {
     passwordController.dispose();
     super.dispose();
   }
-}
-
-void navigateToHome(BuildContext context) {
-  Navigator.of(context).push(_createRoute());
-}
-
-Route _createRoute() {
-  return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => HomeView(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      const begin = Offset(1.0, 0.0);
-      const end = Offset.zero;
-      const curve = Curves.ease;
-
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-
-      var offsetAnimation = animation.drive(tween);
-
-      return SlideTransition(
-        position: offsetAnimation,
-        child: child,
-      );
-    },
-  );
 }
