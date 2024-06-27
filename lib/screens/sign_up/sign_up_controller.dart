@@ -32,7 +32,7 @@ class SignupViewController extends GetxController {
     isSigningUp.value = false;
     if (user != null) {
       Get.snackbar("User is successfully created", 'Success');
-      Get.toNamed(Routes.home);
+      Get.toNamed(Routes.login);
     } else {
       Get.snackbar("Some error happened", 'Failed');
     }

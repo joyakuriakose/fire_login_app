@@ -99,7 +99,7 @@ class SignupView extends GetView<SignupViewController> {
                                     child: const RoundedLoader(),
                                   )
                                 : MAButton(
-                                    text: 'Sign In',
+                                    text: 'Sign Up',
                                     buttonPress: () async {
                                       controller.signUp();
                                     },
